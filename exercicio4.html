@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        
+        Crie uma classe chamada "Quadrado" com ES6, que herdará os métodos da classe "Poligono". 
+        A classe "Poligono" deve ter os seguintes métodos: constructor(altura, largura) e 
+        mostrarNome() para retornar a seguinte mensagem: Olá, eu sou um Polígono. A classe 
+        "Quadrado" deve ter os seguintes métodos: constructor(comprimento) e get area(). Em 
+        seguida, crie um objeto de cada uma das classes e, no final, mostre as seguintes mensagens no 
+        browser: 
+        Olá, eu sou um Polígono. 
+        Olá, eu sou um Quadrado. 
+        A área do quadrado é: <mostrar o respectivo valor>.
+        
+        <script>
+             class Poligono {
+                constructor(altura, largura) {
+                    this.altura = altura;
+                    this.largura = largura;
+                }
+
+                mostrarNome(){
+                    return "<br/>Olá, eu sou Poligono"
+                }
+            }
+
+            class Quadrado extends Poligono {
+                constructor(altura, largura , comprimento){
+                    super(altura, largura);
+                    this.comprimento = comprimento;
+                }
+                mostrar(){
+                    return "<br/>Olá, eu sou um Quadrado ";
+                }
+
+                get area() {
+                    return "A área do quadrado é: "+parseFloat(this.altura) * parseFloat(this.largura)
+                }
+
+                
+            }
+
+            poligono = new Poligono(5,5);
+            document.write(poligono.mostrarNome());
+            quadrado = new Quadrado(5,2,2);
+            document.write(quadrado.mostrar());
+            document.write(quadrado.area);
+
+        </script>
+
+    </div>
+</body>
+</html>
